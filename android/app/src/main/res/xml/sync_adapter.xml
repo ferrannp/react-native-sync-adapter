@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- TODO example app should override these string resources -->
+<sync-adapter
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:accountType="@string/rnsb_sync_account_type"
+    android:allowParallelSyncs="false"
+    android:contentAuthority="@string/rnsb_content_authority"
+    android:isAlwaysSyncable="true"
+    android:supportsUploading="false"
+    android:userVisible="false"/>

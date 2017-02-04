@@ -1,31 +1,40 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+/* @flow */
 
 import React, { Component } from 'react';
 import {
   AppRegistry,
+  Button,
   StyleSheet,
   Text,
   View
 } from 'react-native';
 
+import SyncBackground from './index.js';
+import TestTask from './TestTask';
+
+const syncInterval = 2 * 60 * 60; // 2h
+const syncFlexTime = 0.25 * 60 * 60; // 15m
+
 export default class ReactNativeSyncData extends Component {
+
+  componentDidMount() {
+    SyncBackground.init(syncInterval, syncFlexTime);
+  }
+
+  _onSyncPress = () => {
+    SyncBackground.syncImmediately();
+  };
+
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.welcome}>
-          Welcome to React Native!
+          SyncAdapter example
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
-        </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+        <Button
+          onPress={this._onSyncPress}
+          title="Sync now"
+        />
       </View>
     );
   }
@@ -36,18 +45,11 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
   welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+    marginBottom: 24,
   },
 });
 
 AppRegistry.registerComponent('ReactNativeSyncData', () => ReactNativeSyncData);
+AppRegistry.registerHeadlessTask('TASK_SYNC_BACKGROUND', () => TestTask);
