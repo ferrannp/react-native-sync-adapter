@@ -1,4 +1,4 @@
-package com.reactnativesyncdata;
+package com.fnp.reactnativesyncbackground;
 
 import com.facebook.react.ReactPackage;
 import com.facebook.react.bridge.JavaScriptModule;
@@ -9,7 +9,7 @@ import com.facebook.react.uimanager.ViewManager;
 import java.util.Collections;
 import java.util.List;
 
-class SyncBackgroundPackage implements ReactPackage {
+public class SyncBackgroundPackage implements ReactPackage {
     @Override
     public List<NativeModule> createNativeModules(ReactApplicationContext reactContext) {
         return Collections.<NativeModule>singletonList(new SyncBackgroundModule(reactContext));

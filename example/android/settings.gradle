@@ -1,3 +1,6 @@
 rootProject.name = 'SyncBackgroundExample'
 
 include ':app'
+
+include ':react-native-sync-background'
+project(':react-native-sync-background').projectDir = new File(rootProject.projectDir,   '../node_modules/react-native-sync-background/android')

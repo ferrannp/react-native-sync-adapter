@@ -1,10 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.reactnativesyncdata"
-    android:versionCode="1"
-    android:versionName="1.0">
-
-    <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    package="com.fnp.reactnativesyncbackground">
 
     <!-- Sync adapter -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -12,31 +7,10 @@
     <uses-permission android:name="android.permission.WRITE_SYNC_SETTINGS"/>
     <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
 
-    <uses-sdk
-        android:minSdkVersion="16"
-        android:targetSdkVersion="22" />
-
-    <application
-      android:name=".MainApplication"
-      android:allowBackup="true"
-      android:label="@string/app_name"
-      android:icon="@mipmap/ic_launcher"
-      android:theme="@style/AppTheme">
-
-        <activity
-            android:name=".MainActivity"
-            android:configChanges="keyboard|keyboardHidden|orientation|screenSize"
-            android:label="@string/app_name">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN"/>
-                <category android:name="android.intent.category.LAUNCHER"/>
-            </intent-filter>
-        </activity>
-        <activity android:name="com.facebook.react.devsupport.DevSettingsActivity"/>
-
+    <application>
         <!-- SyncAdapter dummy provider -->
         <provider
-            android:name="com.reactnativesyncdata.DummyContentProvider"
+            android:name=".DummyContentProvider"
             android:authorities="@string/rnsb_content_authority"
             android:exported="false"
             android:syncable="true"/>

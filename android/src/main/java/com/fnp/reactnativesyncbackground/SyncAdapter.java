@@ -1,4 +1,4 @@
-package com.reactnativesyncdata;
+package com.fnp.reactnativesyncbackground;
 
 import android.accounts.Account;
 import android.accounts.AccountManager;
@@ -12,7 +12,7 @@ import android.content.SyncResult;
 import android.os.Build;
 import android.os.Bundle;
 
-public class SyncAdapter extends AbstractThreadedSyncAdapter {
+class SyncAdapter extends AbstractThreadedSyncAdapter {
 
     public SyncAdapter(Context context, boolean autoInitialize) {
         super(context, autoInitialize);

@@ -1,31 +1,46 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+/* @flow */
 
 import React, { Component } from 'react';
 import {
   AppRegistry,
+  Button,
   StyleSheet,
   Text,
   View
 } from 'react-native';
+import SyncBackground from 'react-native-sync-background';
+
+import TestTask from './TestTask';
+
+const syncInterval = 60; // 1 minute
+const syncFlexTime = 15; // 15 seconds
 
 export default class SyncBackgroundExample extends Component {
+
+  componentDidMount() {
+    SyncBackground.init({
+      syncInterval,
+      syncFlexTime,
+    });
+  }
+
+  // _onSyncPress = () => {
+  //   SyncBackground.syncImmediately();
+  // };
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
+        <Text style={styles.title}>
+          React Native Sync Background
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.android.js
+        <Text style={styles.subTitle}>
+          Example
         </Text>
-        <Text style={styles.instructions}>
-          Double tap R on your keyboard to reload,{'\n'}
-          Shake or press menu button for dev menu
-        </Text>
+        {/*<Button*/}
+          {/*onPress={this._onSyncPress}*/}
+          {/*title="Sync now"*/}
+        {/*/>*/}
       </View>
     );
   }
@@ -36,18 +51,19 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
   },
-  welcome: {
+  title: {
     fontSize: 20,
+    color: 'rgba(0, 0, 0, 0.87)',
     textAlign: 'center',
-    margin: 10,
+    marginBottom: 8,
   },
-  instructions: {
+  subTitle: {
+    color: 'rgba(0, 0, 0, 0.54)',
     textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+    marginBottom: 16,
+  }
 });
 
 AppRegistry.registerComponent('SyncBackgroundExample', () => SyncBackgroundExample);
+AppRegistry.registerHeadlessTask('TASK_SYNC_BACKGROUND', () => TestTask);

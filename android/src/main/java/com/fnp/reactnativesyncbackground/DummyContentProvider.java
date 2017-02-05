@@ -1,4 +1,4 @@
-package com.reactnativesyncdata;
+package com.fnp.reactnativesyncbackground;
 
 import android.content.ContentProvider;
 import android.content.ContentValues;

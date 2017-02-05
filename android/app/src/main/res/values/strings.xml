@@ -1,5 +1,0 @@
-<resources>
-    <string name="app_name">ReactNativeSyncData</string>
-    <string name="rnsb_sync_account_type" translatable="false">com.reactnativesyncdata</string>
-    <string name="rnsb_content_authority" translatable="false">com.reactnativesyncdata.provider</string>
-</resources>
