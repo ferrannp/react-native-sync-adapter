@@ -1,30 +1,23 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
+/* @flow */
 
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 
 export default class SyncBackgroundExample extends Component {
+
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.welcome}>
-          Welcome to React Native!
+        <Text style={styles.title}>
+          React Native Sync Background
         </Text>
-        <Text style={styles.instructions}>
-          To get started, edit index.ios.js
-        </Text>
-        <Text style={styles.instructions}>
-          Press Cmd+R to reload,{'\n'}
-          Cmd+D or shake for dev menu
+        <Text style={styles.subTitle}>
+          This library is not available for iOS (neither HeadlessJS). PRs are welcome!
         </Text>
       </View>
     );
@@ -36,17 +29,18 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    marginHorizontal: 16,
   },
-  welcome: {
+  title: {
     fontSize: 20,
+    color: 'rgba(0, 0, 0, 0.87)',
     textAlign: 'center',
-    margin: 10,
+    marginBottom: 12,
   },
-  instructions: {
+  subTitle: {
+    color: 'rgba(0, 0, 0, 0.54)',
     textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
+    marginBottom: 16,
   },
 });
 
