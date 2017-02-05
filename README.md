@@ -1,6 +1,6 @@
 # react-native-sync-background
 
-![](https://circleci.com/gh/ferrannp/react-native-sync-background/tree/master.svg?style=shield&circle-token=6b7e3b61c9c9ab2c346673f08229cc1d4e47ad8e)
+[![Circle CI](https://circleci.com/gh/ferrannp/react-native-sync-background.svg?style=shield)](https://circleci.com/gh/ferrannp/react-native-sync-background)
 
 [Intelligent Job-Scheduling](https://developer.android.com/topic/performance/scheduling.html) port to React Native: Scheduling data background synchronizations that run in your JavaScript. 
 
