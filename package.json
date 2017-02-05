@@ -7,7 +7,9 @@
   "license": "MIT",
   "scripts": {
     "test": "jest",
-    "flow": "flow"
+    "flow": "flow",
+    "lint": "eslint .",
+    "ci": "jest && flow && eslint ."
   },
   "keywords": [
     "react-native",
@@ -17,12 +19,18 @@
     "background"
   ],
   "devDependencies": {
-    "react-native": "*",
-    "react": "*",
+    "babel-eslint": "^7.1.1",
     "babel-jest": "18.0.0",
     "babel-preset-react-native": "1.9.1",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "3.0.2",
+    "eslint-plugin-react": "^6.9.0",
     "flow-bin": "0.37.0",
-    "jest": "18.1.0"
+    "jest": "18.1.0",
+    "react": "*",
+    "react-native": "*"
   },
   "peerDependencies": {
     "react-native": ">= 0.36.0"
@@ -30,5 +38,6 @@
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": "/example/"
-  }
+  },
+  "dependencies": {}
 }

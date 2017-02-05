@@ -3,10 +3,10 @@
 import React, { Component } from 'react';
 import {
   AppRegistry,
-  Button,
+  // Button,
   StyleSheet,
   Text,
-  View
+  View,
 } from 'react-native';
 import SyncBackground from 'react-native-sync-background';
 
@@ -35,12 +35,12 @@ export default class SyncBackgroundExample extends Component {
           React Native Sync Background
         </Text>
         <Text style={styles.subTitle}>
-          Example
+          Example is running!
         </Text>
-        {/*<Button*/}
-          {/*onPress={this._onSyncPress}*/}
-          {/*title="Sync now"*/}
-        {/*/>*/}
+        {/* <Button*/}
+        {/* onPress={this._onSyncPress}*/}
+        {/* title="Sync now"*/}
+        {/* />*/}
       </View>
     );
   }
@@ -56,13 +56,13 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: 'rgba(0, 0, 0, 0.87)',
     textAlign: 'center',
-    marginBottom: 8,
+    marginBottom: 12,
   },
   subTitle: {
     color: 'rgba(0, 0, 0, 0.54)',
     textAlign: 'center',
     marginBottom: 16,
-  }
+  },
 });
 
 AppRegistry.registerComponent('SyncBackgroundExample', () => SyncBackgroundExample);

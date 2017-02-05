@@ -1,6 +1,7 @@
 /* @flow */
 
 import { NativeModules } from 'react-native';
+
 const SyncBackground = NativeModules.SyncBackground;
 
 type Init = {
@@ -19,4 +20,4 @@ export default {
   syncImmediately: () => {
     SyncBackground.syncImmediately();
   },
-}
+};
