@@ -90,3 +90,19 @@ Object: {
 A good example could be `syncInterval: 12 * 60 * 60` (12 hours) and `syncFlexTime: 0.5 * 60 * 60` (30 minutes).
 
 Notice that `syncFlexTime` only works for Android 4.4+, for older versions, that value will be ignored and syncs will be always exact.
+
+## Running example
+
+You can try this library running the `example` app:
+
+```
+cd example && npm install
+```
+
+Then just run:
+
+```
+react-native run-android
+```
+
+**Be careful**: The installed app will trigger a sync around every minute (so it is easy to see that is working). If you debug the app, you should be able to see the HeadlessJS ouputing: `Headless JS task was fired!` (remember not to have the app on the foreground). After you try it, I recommend to uninstall the app so you don't harm your device battery life.
