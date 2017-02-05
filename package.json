@@ -38,6 +38,5 @@
   "jest": {
     "preset": "react-native",
     "modulePathIgnorePatterns": "/example/"
-  },
-  "dependencies": {}
+  }
 }
