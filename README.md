@@ -44,7 +44,7 @@ Open up the `string.xml` file of your Android project. You need to add the follo
 This will override the default values from the library and make them unique for your app.
 
 ### Usage
-You need to register a task with a specific name and only with this specific name: `TASK_SYNC_BACKGROUND`. You can do in the same place where you register your app:
+You need to register a task with a specific name and only with this specific name: `TASK_SYNC_BACKGROUND`. You should do it in the same place where you register your app:
 
 ```js
 AppRegistry.registerComponent('MyApp', () => MyApp);
@@ -66,3 +66,23 @@ componentDidMount() {
 
 ...
 ```
+
+### API
+
+**init**
+
+Schedules background syncs within your app.
+
+```js
+Object: {
+  syncInterval: number;
+  syncFlexTime: number;
+}
+```
+
+* `syncInterval`: The amount of time in seconds that you wish to elapse between periodic syncs
+* `syncFlexTime`: The amount of flex time in seconds before `syncInterval` that you permit for the sync to take place. Must be less than `syncInterval`
+
+A good example could be `syncInterval: 12 * 60 * 60` (12 hours) and `syncFlexTime: 0.5 * 60 * 60` (30 minutes).
+
+Notice that `syncFlexTime` only work for Android 4.4+, for older versions, that value will be ignored and syncs will be always exact.
