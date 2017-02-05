@@ -18,10 +18,10 @@ Under the hood, this library uses a [SyncAdapter](https://developer.android.com/
 ## Caveats
 No iOS support:
 
-* To run tasks on the background using JavaScript, this library uses [Headles JS](https://facebook.github.io/react-native/docs/headless-js-android.html) which is only currently supported on Android. You can vote for the related issue [here](https://productpains.com/post/react-native/headless-js-for-ios).
+* To run tasks on the background using JavaScript, this library uses [Headles JS](https://facebook.github.io/react-native/docs/headless-js-android.html) which is currently supported only on Android. You can vote for the related issue [here](https://productpains.com/post/react-native/headless-js-for-ios)
 
 App in the foreground:
-* Syncs will only trigger if the app is **not** in the foreground. Check out the blog post mentioned above to read more about this and how to mitigate it.
+* Syncs will only trigger if the app is **not** in the foreground. Check out the blog post mentioned above to read more about this and how to mitigate it
 
 ## Getting started
 
@@ -44,7 +44,7 @@ Open up the `string.xml` file of your Android project. You need to add the follo
 This will override the default values from the library and make them unique for your app.
 
 ### Usage
-You need to register a task with a specific name and only with this specific name: `TASK_SYNC_BACKGROUND`. You should do it in the same place where you register your app:
+You need to [register a task](https://facebook.github.io/react-native/docs/headless-js-android.html#the-js-api) with a specific name and only with this specific name: `TASK_SYNC_BACKGROUND`. You should do it in the same place where you register your app:
 
 ```js
 AppRegistry.registerComponent('MyApp', () => MyApp);
@@ -67,9 +67,11 @@ componentDidMount() {
 ...
 ```
 
+That is all!
+
 ### API
 
-**init**
+#### init
 
 Schedules background syncs within your app.
 
@@ -85,4 +87,4 @@ Object: {
 
 A good example could be `syncInterval: 12 * 60 * 60` (12 hours) and `syncFlexTime: 0.5 * 60 * 60` (30 minutes).
 
-Notice that `syncFlexTime` only work for Android 4.4+, for older versions, that value will be ignored and syncs will be always exact.
+Notice that `syncFlexTime` only works for Android 4.4+, for older versions, that value will be ignored and syncs will be always exact.
