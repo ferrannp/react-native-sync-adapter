@@ -1,22 +1,34 @@
 {
-	"name": "ReactNativeSyncData",
-	"version": "0.0.1",
-	"private": true,
-	"scripts": {
-		"start": "node node_modules/react-native/local-cli/cli.js start",
-		"test": "jest"
-	},
-	"dependencies": {
-		"react": "~15.4.0-rc.4",
-		"react-native": "0.40.0"
-	},
-	"devDependencies": {
-		"babel-jest": "18.0.0",
-		"babel-preset-react-native": "1.9.1",
-		"jest": "18.1.0",
-		"react-test-renderer": "~15.4.0-rc.4"
-	},
-	"jest": {
-		"preset": "react-native"
-	}
+  "name": "react-native-sync-background",
+  "version": "1.0.0",
+  "description": "Schedule background data synchronization using React Native.",
+  "main": "index.js",
+  "author": "Ferran Negre Pizarro <fnp.developer@gmail.com> (https://github.com/ferrannp)",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest",
+    "flow": "flow"
+  },
+  "keywords": [
+    "react-native",
+    "sync-adapter",
+    "android",
+    "sync",
+    "background"
+  ],
+  "devDependencies": {
+    "react-native": "*",
+    "react": "*",
+    "babel-jest": "18.0.0",
+    "babel-preset-react-native": "1.9.1",
+    "flow-bin": "0.37.0",
+    "jest": "18.1.0"
+  },
+  "peerDependencies": {
+    "react-native": ">= 0.36.0"
+  },
+  "jest": {
+    "preset": "react-native",
+    "modulePathIgnorePatterns": "/example/"
+  }
 }

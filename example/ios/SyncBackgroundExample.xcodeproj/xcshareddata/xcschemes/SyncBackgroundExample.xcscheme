@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-               BuildableName = "ReactNativeSyncData.app"
-               BlueprintName = "ReactNativeSyncData"
-               ReferencedContainer = "container:ReactNativeSyncData.xcodeproj">
+               BuildableName = "SyncBackgroundExample.app"
+               BlueprintName = "SyncBackgroundExample"
+               ReferencedContainer = "container:SyncBackgroundExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "ReactNativeSyncDataTests.xctest"
-               BlueprintName = "ReactNativeSyncDataTests"
-               ReferencedContainer = "container:ReactNativeSyncData.xcodeproj">
+               BuildableName = "SyncBackgroundExampleTests.xctest"
+               BlueprintName = "SyncBackgroundExampleTests"
+               ReferencedContainer = "container:SyncBackgroundExample.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -61,9 +61,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "00E356ED1AD99517003FC87E"
-               BuildableName = "ReactNativeSyncDataTests.xctest"
-               BlueprintName = "ReactNativeSyncDataTests"
-               ReferencedContainer = "container:ReactNativeSyncData.xcodeproj">
+               BuildableName = "SyncBackgroundExampleTests.xctest"
+               BlueprintName = "SyncBackgroundExampleTests"
+               ReferencedContainer = "container:SyncBackgroundExample.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -71,9 +71,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ReactNativeSyncData.app"
-            BlueprintName = "ReactNativeSyncData"
-            ReferencedContainer = "container:ReactNativeSyncData.xcodeproj">
+            BuildableName = "SyncBackgroundExample.app"
+            BlueprintName = "SyncBackgroundExample"
+            ReferencedContainer = "container:SyncBackgroundExample.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -94,9 +94,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ReactNativeSyncData.app"
-            BlueprintName = "ReactNativeSyncData"
-            ReferencedContainer = "container:ReactNativeSyncData.xcodeproj">
+            BuildableName = "SyncBackgroundExample.app"
+            BlueprintName = "SyncBackgroundExample"
+            ReferencedContainer = "container:SyncBackgroundExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -113,9 +113,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "13B07F861A680F5B00A75B9A"
-            BuildableName = "ReactNativeSyncData.app"
-            BlueprintName = "ReactNativeSyncData"
-            ReferencedContainer = "container:ReactNativeSyncData.xcodeproj">
+            BuildableName = "SyncBackgroundExample.app"
+            BlueprintName = "SyncBackgroundExample"
+            ReferencedContainer = "container:SyncBackgroundExample.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
