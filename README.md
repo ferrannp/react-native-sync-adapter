@@ -1,5 +1,7 @@
 # react-native-sync-background
 
+![](https://circleci.com/gh/ferrannp/react-native-sync-background/tree/master.svg?style=shield&circle-token=6b7e3b61c9c9ab2c346673f08229cc1d4e47ad8e)
+
 [Intelligent Job-Scheduling](https://developer.android.com/topic/performance/scheduling.html) port to React Native: Scheduling data background synchronizations that run in your JavaScript. 
 
 Read more in the following post: *React Native using the Android SyncAdapter to sync data in the background* **(Coming soon...)**.
