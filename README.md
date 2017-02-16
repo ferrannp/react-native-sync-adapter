@@ -4,7 +4,7 @@
 
 [Intelligent Job-Scheduling](https://developer.android.com/topic/performance/scheduling.html) port to React Native: Scheduling data background synchronizations that run in your JavaScript. 
 
-Read more in the following post: *React Native using the Android SyncAdapter to sync data in the background* **(Coming soon...)**.
+Read a broader introduction in the following post: [React Native and Native Modules: The Android SyncAdapter](https://blog.callstack.io/react-native-and-native-modules-the-android-syncadapter-517ddf851bf4#.qb5ed9din)
 
 ## Requirements
 * React Native 0.36+
