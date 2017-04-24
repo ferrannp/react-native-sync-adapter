@@ -3,8 +3,7 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "yarn run haul -- --platform android",
-    "test": "jest"
+    "start": "yarn run haul -- --platform android"
   },
   "dependencies": {
     "react": "16.0.0-alpha.6",
@@ -14,9 +13,7 @@
   "devDependencies": {
     "babel-jest": "18.0.0",
     "babel-preset-react-native": "1.9.1",
-    "haul-cli": "^0.5.0",
-    "jest": "18.1.0",
-    "react-test-renderer": "~15.4.0-rc.4"
+    "haul-cli": "^0.5.0"
   },
   "jest": {
     "preset": "react-native"
