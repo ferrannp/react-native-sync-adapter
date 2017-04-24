@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">ReactNativeSyncBackground</string>
-    <string name="rnsb_sync_account_type" translatable="false">com.fnp.reactnativesyncbackground</string>
-    <string name="rnsb_content_authority" translatable="false">com.fnp.reactnativesyncbackground.provider</string>
+    <string name="app_name">ReactNativeSyncAdapter</string>
+    <string name="rnsb_sync_account_type" translatable="false">com.fnp.reactnativesyncadapter</string>
+    <string name="rnsb_content_authority" translatable="false">com.fnp.reactnativesyncadapter.provider</string>
 </resources>

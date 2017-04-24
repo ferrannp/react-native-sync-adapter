@@ -1,4 +1,4 @@
-package com.syncbackgroundexample;
+package com.syncadapterexample;
 
 import com.facebook.react.ReactActivity;
 
@@ -10,6 +10,6 @@ public class MainActivity extends ReactActivity {
      */
     @Override
     protected String getMainComponentName() {
-        return "SyncBackgroundExample";
+        return "SyncAdapterExample";
     }
 }

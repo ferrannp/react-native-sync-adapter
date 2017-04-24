@@ -8,31 +8,31 @@ import {
   Text,
   View,
 } from 'react-native';
-import SyncBackground from 'react-native-sync-background';
+import SyncAdapter from 'react-native-sync-adapter';
 
 import TestTask from './TestTask';
 
 const syncInterval = 60; // 1 minute
 const syncFlexTime = 15; // 15 seconds
 
-export default class SyncBackgroundExample extends Component {
+export default class SyncAdapterExample extends Component {
 
   componentDidMount() {
-    SyncBackground.init({
+    SyncAdapter.init({
       syncInterval,
       syncFlexTime,
     });
   }
 
   // _onSyncPress = () => {
-  //   SyncBackground.syncImmediately();
+  //   SyncAdapter.syncImmediately();
   // };
 
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>
-          React Native Sync Background
+          React Native Sync Adapter
         </Text>
         <Text style={styles.subTitle}>
           Example is running!
@@ -65,5 +65,5 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('SyncBackgroundExample', () => SyncBackgroundExample);
-AppRegistry.registerHeadlessTask('TASK_SYNC_BACKGROUND', () => TestTask);
+AppRegistry.registerComponent('SyncAdapterExample', () => SyncAdapterExample);
+AppRegistry.registerHeadlessTask('TASK_SYNC_ADAPTER', () => TestTask);

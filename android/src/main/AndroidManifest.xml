@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.fnp.reactnativesyncbackground">
+    package="com.fnp.reactnativesyncadapter">
 
     <!-- Sync adapter -->
     <uses-permission android:name="android.permission.WAKE_LOCK" />
@@ -10,13 +10,13 @@
     <application>
         <!-- SyncAdapter dummy provider -->
         <provider
-            android:name=".DummyContentProvider"
+            android:name="com.fnp.reactnativesyncadapter.DummyContentProvider"
             android:authorities="@string/rnsb_content_authority"
             android:exported="false"
             android:syncable="true"/>
 
         <!-- SyncAdapter's dummy authentication service -->
-        <service android:name=".DummyAuthenticatorService">
+        <service android:name="com.fnp.reactnativesyncadapter.DummyAuthenticatorService">
             <intent-filter>
                 <action android:name="android.accounts.AccountAuthenticator"/>
             </intent-filter>
@@ -27,7 +27,7 @@
 
         <!-- Bound Service to interact with the SyncAdapter -->
         <service
-            android:name=".SyncService"
+            android:name="com.fnp.reactnativesyncadapter.SyncService"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.content.SyncAdapter"/>
@@ -38,7 +38,7 @@
         </service>
 
         <!-- React Native HeadlessJsTaskService -->
-        <service android:name=".HeadlessService"
+        <service android:name="com.fnp.reactnativesyncadapter.HeadlessService"
                  android:enabled="true"/>
 
     </application>

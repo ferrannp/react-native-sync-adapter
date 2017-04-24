@@ -1,4 +1,4 @@
-package com.syncbackgroundexample;
+package com.syncadapterexample;
 
 import android.app.Application;
 
@@ -7,7 +7,7 @@ import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
 import com.facebook.soloader.SoLoader;
-import com.fnp.reactnativesyncbackground.SyncBackgroundPackage;
+import com.fnp.reactnativesyncadapter.SyncAdapterPackage;
 
 import java.util.Arrays;
 import java.util.List;
@@ -24,7 +24,7 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
-          new SyncBackgroundPackage()
+          new SyncAdapterPackage()
       );
     }
   };

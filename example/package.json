@@ -1,19 +1,20 @@
 {
-  "name": "SyncBackgroundExample",
+  "name": "SyncAdapterExample",
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "start": "yarn run haul -- --platform android",
     "test": "jest"
   },
   "dependencies": {
-    "react": "~15.4.0-rc.4",
-    "react-native": "0.41.1",
-    "react-native-sync-background": "../"
+    "react": "16.0.0-alpha.6",
+    "react-native": "0.43.3",
+    "react-native-sync-adapter": "file:../"
   },
   "devDependencies": {
     "babel-jest": "18.0.0",
     "babel-preset-react-native": "1.9.1",
+    "haul-cli": "^0.5.0",
     "jest": "18.1.0",
     "react-test-renderer": "~15.4.0-rc.4"
   },

@@ -1,13 +1,13 @@
-package com.fnp.reactnativesyncbackground;
+package com.fnp.reactnativesyncadapter;
 
 import com.facebook.react.bridge.ReactApplicationContext;
 import com.facebook.react.bridge.ReactContextBaseJavaModule;
 import com.facebook.react.bridge.ReactMethod;
 
 @SuppressWarnings("unused")
-class SyncBackgroundModule extends ReactContextBaseJavaModule {
+class SyncAdapterModule extends ReactContextBaseJavaModule {
 
-    SyncBackgroundModule(ReactApplicationContext reactContext) {
+    SyncAdapterModule(ReactApplicationContext reactContext) {
         super(reactContext);
     }
 
@@ -24,6 +24,6 @@ class SyncBackgroundModule extends ReactContextBaseJavaModule {
 
     @Override
     public String getName() {
-        return "SyncBackground";
+        return "SyncAdapter";
     }
 }

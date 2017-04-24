@@ -1,8 +1,8 @@
-# react-native-sync-background
+# react-native-sync-adapter
 
-[![Circle CI](https://circleci.com/gh/ferrannp/react-native-sync-background.svg?style=shield)](https://circleci.com/gh/ferrannp/react-native-sync-background) [![npm version](https://badge.fury.io/js/react-native-sync-background.svg)](https://badge.fury.io/js/react-native-sync-background)
+[![Circle CI](https://circleci.com/gh/ferrannp/react-native-sync-adapter.svg?style=shield)](https://circleci.com/gh/ferrannp/react-native-sync-adapter) [![npm version](https://badge.fury.io/js/react-native-sync-adapter.svg)](https://badge.fury.io/js/react-native-sync-adapter)
 
-[Intelligent Job-Scheduling](https://developer.android.com/topic/performance/scheduling.html) port to React Native: Scheduling data background synchronizations that run in your JavaScript. 
+[Intelligent Job-Scheduling](https://developer.android.com/topic/performance/scheduling.html) port to React Native: Scheduling data background synchronizations that run in your JavaScript.
 
 Read more in the following post: *React Native using the Android SyncAdapter to sync data in the background* **(Coming soon...)**.
 
@@ -28,12 +28,12 @@ App in the foreground:
 ## Getting started
 
 ```
-yarn add react-native-sync-background
+yarn add react-native-sync-adapter
 ```
 
 ### Installation
 ```
-react-native link react-native-sync-background
+react-native link react-native-sync-adapter
 ```
 #### Manual Android required step
 Open up the `string.xml` file of your Android project. You need to add the following (just change the content):
@@ -46,21 +46,21 @@ Open up the `string.xml` file of your Android project. You need to add the follo
 This will override the default values from the library and make them unique for your app.
 
 ### Usage
-You need to [register a task](https://facebook.github.io/react-native/docs/headless-js-android.html#the-js-api) with a specific name and only with this specific name: `TASK_SYNC_BACKGROUND`. You should do it in the same place where you register your app:
+You need to [register a task](https://facebook.github.io/react-native/docs/headless-js-android.html#the-js-api) with a specific name and only with this specific name: `TASK_SYNC_ADAPTER`. You should do it in the same place where you register your app:
 
 ```js
 AppRegistry.registerComponent('MyApp', () => MyApp);
-AppRegistry.registerHeadlessTask('TASK_SYNC_BACKGROUND', () => TestTask);
+AppRegistry.registerHeadlessTask('TASK_SYNC_ADAPTER', () => TestTask);
 ```
 
 Then, on your top most component:
 ```js
-import SyncBackground from 'react-native-sync-background';
+import SyncAdapter from 'react-native-sync-adapter';
 
 ...
 
 componentDidMount() {
-  SyncBackground.init({
+  SyncAdapter.init({
     syncInterval,
     syncFlexTime,
   });
@@ -96,7 +96,7 @@ Notice that `syncFlexTime` only works for Android 4.4+, for older versions, that
 You can try this library running the `example` app:
 
 ```
-cd example && npm install
+cd example && yarn && npm start
 ```
 
 Then just run:

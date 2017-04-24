@@ -1,4 +1,4 @@
-package com.fnp.reactnativesyncbackground;
+package com.fnp.reactnativesyncadapter;
 
 import android.content.Intent;
 
@@ -11,7 +11,7 @@ import com.facebook.react.jstasks.HeadlessJsTaskConfig;
 
 public class HeadlessService extends HeadlessJsTaskService {
 
-    private static final String TASK_ID = "TASK_SYNC_BACKGROUND";
+    private static final String TASK_ID = "TASK_SYNC_ADAPTER";
 
     @Override
     protected HeadlessJsTaskConfig getTaskConfig(Intent intent) {

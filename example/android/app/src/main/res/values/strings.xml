@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">SyncBackgroundExample</string>
-    <string name="rnsb_sync_account_type" translatable="false">com.fnp.syncbackgroundexample</string>
-    <string name="rnsb_content_authority" translatable="false">com.fnp.syncbackgroundexample.provider</string>
+    <string name="app_name">SyncAdapterExample</string>
+    <string name="rnsb_sync_account_type" translatable="false">com.fnp.syncadapterexample</string>
+    <string name="rnsb_content_authority" translatable="false">com.fnp.syncadapterexample.provider</string>
 </resources>

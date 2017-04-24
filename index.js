@@ -2,7 +2,7 @@
 
 import { NativeModules } from 'react-native';
 
-const SyncBackground = NativeModules.SyncBackground;
+const SyncAdapter = NativeModules.SyncAdapter;
 
 type Init = {
   syncInterval: number;
@@ -14,10 +14,10 @@ export default {
     if (syncFlexTime > syncInterval) {
       throw new Error('Specified syncInterval must be greater than the specified syncFlexTime.');
     }
-    SyncBackground.init(syncInterval, syncFlexTime);
+    SyncAdapter.init(syncInterval, syncFlexTime);
   },
 
   syncImmediately: () => {
-    SyncBackground.syncImmediately();
+    SyncAdapter.syncImmediately();
   },
 };

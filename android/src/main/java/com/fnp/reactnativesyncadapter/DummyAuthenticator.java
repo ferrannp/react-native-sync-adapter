@@ -1,4 +1,4 @@
-package com.fnp.reactnativesyncbackground;
+package com.fnp.reactnativesyncadapter;
 
 
 import android.accounts.AbstractAccountAuthenticator;

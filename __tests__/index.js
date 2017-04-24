@@ -1,7 +1,7 @@
 /* @flow */
 
-import SyncBackground from '../index';
+import SyncAdapter from '../index';
 
 it('loads the module correctly', () => {
-  expect(SyncBackground).toBeDefined();
+  expect(SyncAdapter).toBeDefined();
 });
