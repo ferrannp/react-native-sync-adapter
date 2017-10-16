@@ -45,7 +45,7 @@ Open up the `string.xml` file of your Android project. You need to add the follo
 
 This will override the default values from the library and make them unique for your app.
 
-### Usage
+## Usage
 You need to [register a task](https://facebook.github.io/react-native/docs/headless-js-android.html#the-js-api) with a specific name and only with this specific name: `TASK_SYNC_ADAPTER`. You should do it in the same place where you register your app:
 
 ```js
@@ -88,9 +88,9 @@ If you want to trigger a sync natively (e.g. responding to a broadcast receiver)
 SyncAdapter.syncImmediately(Context context, int syncInterval, int syncFlexTime);
 ```
 
-### API
+## API
 
-#### init
+### init
 
 Schedules background syncs within your app.
 
