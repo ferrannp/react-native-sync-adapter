@@ -2,4 +2,5 @@
     <string name="app_name">ReactNativeSyncAdapter</string>
     <string name="rnsb_sync_account_type" translatable="false">com.fnp.reactnativesyncadapter</string>
     <string name="rnsb_content_authority" translatable="false">com.fnp.reactnativesyncadapter.provider</string>
+    <string name="rnsb_default_timeout" translatable="false">300000</string>
 </resources>

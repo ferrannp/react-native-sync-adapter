@@ -1,13 +1,13 @@
 package com.fnp.reactnativesyncadapter;
 
+import android.app.ActivityManager;
+import android.content.Context;
 import android.content.Intent;
 
 import com.facebook.react.HeadlessJsTaskService;
-import com.facebook.react.ReactApplication;
-import com.facebook.react.ReactInstanceManager;
-import com.facebook.react.bridge.ReactContext;
-import com.facebook.react.common.LifecycleState;
 import com.facebook.react.jstasks.HeadlessJsTaskConfig;
+
+import java.util.List;
 
 public class HeadlessService extends HeadlessJsTaskService {
 
@@ -15,27 +15,37 @@ public class HeadlessService extends HeadlessJsTaskService {
 
     @Override
     protected HeadlessJsTaskConfig getTaskConfig(Intent intent) {
-        if(!isAppInForeground()) {
+        if(!isAppOnForeground(this)) {
             return new HeadlessJsTaskConfig(
                     TASK_ID,
                     null,
-                    300000);
+                    Long.valueOf(getString(R.string.rnsb_default_timeout)));
         }
 
         stopSelf();
         return null;
     }
 
-    /**
-     * Checks if the app is currently running in the foreground
-     */
-    private boolean isAppInForeground() {
-        final ReactInstanceManager reactInstanceManager =
-                ((ReactApplication) getApplication())
-                        .getReactNativeHost()
-                        .getReactInstanceManager();
-        ReactContext reactContext = reactInstanceManager.getCurrentReactContext();
+    // From https://facebook.github.io/react-native/docs/headless-js-android.html
+    private boolean isAppOnForeground(Context context) {
+        ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
+        assert activityManager != null;
+        List<ActivityManager.RunningAppProcessInfo> appProcesses =
+                activityManager.getRunningAppProcesses();
 
-        return reactContext != null && reactContext.getLifecycleState() == LifecycleState.RESUMED;
+        if (appProcesses == null) {
+            return false;
+        }
+
+        final String packageName = context.getPackageName();
+        for (ActivityManager.RunningAppProcessInfo appProcess : appProcesses) {
+            if (appProcess.importance ==
+                    ActivityManager.RunningAppProcessInfo.IMPORTANCE_FOREGROUND &&
+                    appProcess.processName.equals(packageName)) {
+                return true;
+            }
+        }
+
+        return false;
     }
 }

@@ -27,7 +27,7 @@ class SyncAdapter extends AbstractThreadedSyncAdapter {
     /**
      * Helper method to have the sync adapter sync immediately
      */
-    static void syncImmediately(Context context, int syncInterval, int syncFlexTime) {
+    public static void syncImmediately(Context context, int syncInterval, int syncFlexTime) {
         Bundle bundle = new Bundle();
         bundle.putBoolean(ContentResolver.SYNC_EXTRAS_EXPEDITED, true);
         bundle.putBoolean(ContentResolver.SYNC_EXTRAS_MANUAL, true);

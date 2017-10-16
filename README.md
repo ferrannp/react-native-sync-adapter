@@ -71,6 +71,23 @@ componentDidMount() {
 
 That is all!
 
+### Timeout
+
+The default timeout for your Headless JS task is 5 minutes (300000ms). If you want to override this value, you will also need to override `strings.xml` again:
+
+```xml
+<!-- Overrides default timeout to 10 minutes -->
+<string name="rnsb_default_timeout" translatable="false">600000</string>
+```
+
+### Broadcast Receiver
+
+If you want to trigger a sync natively (e.g. responding to a broadcast receiver), you can call:
+
+```java
+SyncAdapter.syncImmediately(Context context, int syncInterval, int syncFlexTime);
+```
+
 ### API
 
 #### init
