@@ -1,20 +1,18 @@
 machine:
   environment:
     NODE_ENV: test
+    PATH: "${PATH}:${HOME}/${CIRCLE_PROJECT_REPONAME}/node_modules/.bin"
 general:
   artifacts:
     - ./coverage
 dependencies:
-  pre:
-    # Installing Yarn
-    - curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
-    - echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
-    - sudo apt-get update && sudo apt-get install yarn
   override:
     - yarn
     - cd example && yarn && cd ..
+  cache_directories:
+    - ~/.cache/yarn
 test:
   override:
-    - npm run lint
-    - npm run flow
-    - npm run test -- --coverage --no-cache -i
+    - yarn run lint
+    - yarn run flow
+    - yarn run test --coverage --no-cache -i
