@@ -15,8 +15,7 @@ import TestTask from './TestTask';
 const syncInterval = 60; // 1 minute
 const syncFlexTime = 15; // 15 seconds
 
-export default class SyncAdapterExample extends Component {
-
+export default class SyncAdapterExample extends Component<{}> {
   componentDidMount() {
     SyncAdapter.init({
       syncInterval,
@@ -31,16 +30,12 @@ export default class SyncAdapterExample extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <Text style={styles.title}>
-          React Native Sync Adapter
-        </Text>
-        <Text style={styles.subTitle}>
-          Example is running!
-        </Text>
-        {/* <Button*/}
-        {/* onPress={this._onSyncPress}*/}
-        {/* title="Sync now"*/}
-        {/* />*/}
+        <Text style={styles.title}>React Native Sync Adapter</Text>
+        <Text style={styles.subTitle}>Example is running!</Text>
+        {/* <Button */}
+        {/* onPress={this._onSyncPress} */}
+        {/* title="Sync now" */}
+        {/* /> */}
       </View>
     );
   }
