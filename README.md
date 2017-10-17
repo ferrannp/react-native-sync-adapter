@@ -22,9 +22,6 @@ No iOS support:
 
 * To run tasks on the background using JavaScript, this library uses [Headles JS](https://facebook.github.io/react-native/docs/headless-js-android.html) which is currently supported only on Android. You can vote for the related issue [here](https://productpains.com/post/react-native/headless-js-for-ios)
 
-App in the foreground:
-* Syncs will only trigger if the app is **not** in the foreground. Check out the blog post mentioned above to read more about this and how to mitigate it
-
 ## Getting started
 
 ```
@@ -69,7 +66,7 @@ componentDidMount() {
 ...
 ```
 
-That is all!
+That is all! Some extras:
 
 ### Timeout
 
@@ -78,6 +75,15 @@ The default timeout for your Headless JS task is 5 minutes (300000ms). If you wa
 ```xml
 <!-- Overrides default timeout to 10 minutes -->
 <string name="rnsb_default_timeout" translatable="false">600000</string>
+```
+
+### Running the task while the app is in the foreground
+
+By default, the sync task will only run if the app is **not** in the foreground. This is one of the default [caveats](https://facebook.github.io/react-native/docs/headless-js-android.html#caveats) from HeadlessJS.
+If you want to override this behavior, you can, one more time overriding `strings.xml`:
+
+```xml
+<string name="rnsb_allow_foreground">true</string>
 ```
 
 ### Broadcast Receiver
@@ -122,4 +128,4 @@ Then just run:
 react-native run-android
 ```
 
-**Be careful**: The installed app will trigger a sync around every minute (so it is easy to see that is working). If you debug the app, you should be able to see the HeadlessJS ouputing: `Headless JS task was fired!` (remember not to have the app on the foreground). After you try it, I recommend to uninstall the app so you don't harm your device battery life.
+**Be careful**: The installed app will trigger a sync around every minute (so it is easy to see that is working). If you debug the app, you should be able to see the HeadlessJS ouputing: `Headless JS task was fired!` (remember not to have the app on the foreground: Unless you override this behavior). After you try it, I recommend to uninstall the app so you don't harm your device battery life.

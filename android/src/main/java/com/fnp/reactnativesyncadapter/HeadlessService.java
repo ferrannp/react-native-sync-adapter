@@ -15,11 +15,14 @@ public class HeadlessService extends HeadlessJsTaskService {
 
     @Override
     protected HeadlessJsTaskConfig getTaskConfig(Intent intent) {
-        if(!isAppOnForeground(this)) {
+        boolean allowForeground = Boolean.valueOf(getString(R.string.rnsb_allow_foreground));
+
+        if(allowForeground || !isAppOnForeground(this)) {
             return new HeadlessJsTaskConfig(
                     TASK_ID,
                     null,
-                    Long.valueOf(getString(R.string.rnsb_default_timeout)));
+                    Long.valueOf(getString(R.string.rnsb_default_timeout)),
+                    allowForeground);
         }
 
         stopSelf();
