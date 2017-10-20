@@ -1,13 +1,7 @@
 /* @flow */
 
 import React, { Component } from 'react';
-import {
-  AppRegistry,
-  // Button,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import { AppRegistry, Button, StyleSheet, Text, View } from 'react-native';
 import SyncAdapter from 'react-native-sync-adapter';
 
 import TestTask from './TestTask';
@@ -23,19 +17,19 @@ export default class SyncAdapterExample extends Component<{}> {
     });
   }
 
-  // _onSyncPress = () => {
-  //   SyncAdapter.syncImmediately();
-  // };
+  _onSyncPress = () => {
+    SyncAdapter.syncImmediately({
+      syncInterval,
+      syncFlexTime,
+    });
+  };
 
   render() {
     return (
       <View style={styles.container}>
         <Text style={styles.title}>React Native Sync Adapter</Text>
         <Text style={styles.subTitle}>Example is running!</Text>
-        {/* <Button */}
-        {/* onPress={this._onSyncPress} */}
-        {/* title="Sync now" */}
-        {/* /> */}
+        <Button onPress={this._onSyncPress} title="Sync now" />
       </View>
     );
   }

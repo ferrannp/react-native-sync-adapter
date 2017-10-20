@@ -30,7 +30,7 @@ public class HeadlessService extends HeadlessJsTaskService {
     }
 
     // From https://facebook.github.io/react-native/docs/headless-js-android.html
-    private boolean isAppOnForeground(Context context) {
+    public static boolean isAppOnForeground(Context context) {
         ActivityManager activityManager = (ActivityManager) context.getSystemService(Context.ACTIVITY_SERVICE);
         assert activityManager != null;
         List<ActivityManager.RunningAppProcessInfo> appProcesses =

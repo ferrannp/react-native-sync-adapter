@@ -114,6 +114,19 @@ A good example could be `syncInterval: 12 * 60 * 60` (12 hours) and `syncFlexTim
 
 Notice that `syncFlexTime` only works for Android 4.4+, for older versions, that value will be ignored and syncs will be always exact.
 
+### syncImmediately
+
+Invoke the sync task. Use the same values as in the [init](#init) call.
+
+```js
+Object: {
+  syncInterval: number;
+  syncFlexTime: number;
+}
+```
+
+Be aware that for this method to work (if you call it from inside your app) you need to allow the task to [work on the foreground](https://github.com/ferrannp/react-native-sync-adapter#running-the-task-while-the-app-is-in-the-foreground).
+
 ## Running example
 
 You can try this library running the `example` app:
