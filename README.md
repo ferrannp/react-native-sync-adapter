@@ -18,9 +18,7 @@ Under the hood, this library uses a [SyncAdapter](https://developer.android.com/
 * Compatible with all Android versions supported by RN (4.1+)
 
 ## Caveats
-No iOS support:
-
-* To run tasks on the background using JavaScript, this library uses [Headles JS](https://facebook.github.io/react-native/docs/headless-js-android.html) which is currently supported only on Android. You can vote for the related issue [here](https://productpains.com/post/react-native/headless-js-for-ios)
+This library is only for Android. If you want to do something similar on iOS, I recommend using [react-native-background-fetch](https://github.com/transistorsoft/react-native-background-fetch).
 
 ## Getting started
 
