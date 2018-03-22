@@ -3,25 +3,62 @@ package com.fnp.reactnativesyncadapter;
 import android.accounts.Account;
 import android.accounts.AccountManager;
 import android.content.AbstractThreadedSyncAdapter;
+import android.content.ComponentName;
 import android.content.ContentProviderClient;
 import android.content.ContentResolver;
 import android.content.Context;
 import android.content.Intent;
+import android.content.ServiceConnection;
 import android.content.SyncRequest;
 import android.content.SyncResult;
 import android.os.Build;
 import android.os.Bundle;
+import android.os.IBinder;
 
-class SyncAdapter extends AbstractThreadedSyncAdapter {
+import java.util.concurrent.CountDownLatch;
+
+class SyncAdapter extends AbstractThreadedSyncAdapter implements HeadlessService.Callback {
+
+    private CountDownLatch doneSignal = new CountDownLatch(1);
+    private Intent mIntent;
+    private ServiceConnection mConnection = new ServiceConnection() {
+        @Override
+        public void onServiceConnected(ComponentName componentName, IBinder binder) {
+            HeadlessService service = ((HeadlessService.LocalBinder)binder).getService();
+            service.notifyOnTaskCompletion(SyncAdapter.this);
+            service.startHeadlessTask(mIntent);
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+        }
+    };
 
     public SyncAdapter(Context context, boolean autoInitialize) {
         super(context, autoInitialize);
     }
 
     @Override
+    public void onTaskCompletion() {
+        getContext().unbindService(mConnection);
+        doneSignal.countDown();
+    }
+
+    @Override
     public void onPerformSync(Account account, Bundle extras, String authority, ContentProviderClient provider, SyncResult syncResult) {
-        Intent service = new Intent(getContext(), HeadlessService.class);
-        getContext().startService(service);
+        mIntent = new Intent(getContext(), HeadlessService.class);
+        Context context = getContext();
+
+        if (context.getString(R.string.rnsb_user_visible).equals("true")) {
+            context.bindService(mIntent, mConnection, Context.BIND_AUTO_CREATE);
+            try {
+                doneSignal.await();
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        } else {
+            context.startService(mIntent);
+        }
     }
 
     /**
