@@ -77,10 +77,10 @@ The default timeout for your Headless JS task is 5 minutes (300000ms). If you wa
 
 ### User visible
 
-By default the user will not be able to manually request a sync from the settings. If you want the user to have the option to request a sync from the settings, you have to override `strings.xml` again:
+By default the user will not be able to manually enable/disable syncs through the Account settings. If you want the user to have this option, you need to override `strings.xml`:
 
 ```xml
-<!-- Allows user to manually request a sync from settings -->
+<!-- Allows the user to enable/disable the sync functionality through the Account settings -->
 <string name="rnsb_user_visible" translatable="false">true</string>
 ```
 
