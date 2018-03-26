@@ -75,6 +75,15 @@ The default timeout for your Headless JS task is 5 minutes (300000ms). If you wa
 <string name="rnsb_default_timeout" translatable="false">600000</string>
 ```
 
+### User visible
+
+By default the user will not be able to manually enable/disable syncs through the Account settings. If you want the user to have this option, you need to override `strings.xml`:
+
+```xml
+<!-- Allows the user to enable/disable the sync functionality through the Account settings -->
+<string name="rnsb_user_visible" translatable="false">true</string>
+```
+
 ### Running the task while the app is in the foreground
 
 By default, the sync task will only run if the app is **not** in the foreground. This is one of the default [caveats](https://facebook.github.io/react-native/docs/headless-js-android.html#caveats) from HeadlessJS.

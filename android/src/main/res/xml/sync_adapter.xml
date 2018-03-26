@@ -6,4 +6,4 @@
     android:contentAuthority="@string/rnsb_content_authority"
     android:isAlwaysSyncable="true"
     android:supportsUploading="false"
-    android:userVisible="false"/>
+    android:userVisible="@string/rnsb_user_visible"/>
