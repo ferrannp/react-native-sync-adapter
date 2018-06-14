@@ -21,7 +21,7 @@ class SyncAdapter extends AbstractThreadedSyncAdapter {
     @Override
     public void onPerformSync(Account account, Bundle extras, String authority, ContentProviderClient provider, SyncResult syncResult) {
         Intent service = new Intent(getContext(), HeadlessService.class);
-        getContext().startService(service);
+        getContext().startForegroundService(service);
     }
 
     /**
@@ -80,7 +80,7 @@ class SyncAdapter extends AbstractThreadedSyncAdapter {
     private static void configurePeriodicSync(Context context, int syncInterval, int flexTime) {
         Account account = getSyncAccount(context, syncInterval, flexTime);
         String authority = context.getString(R.string.rnsb_content_authority);
-        
+
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             // We can enable inexact timers in our periodic sync (better for batter life)
             SyncRequest request = new SyncRequest.Builder().
