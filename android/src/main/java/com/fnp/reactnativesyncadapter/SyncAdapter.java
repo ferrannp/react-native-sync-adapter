@@ -24,7 +24,7 @@ class SyncAdapter extends AbstractThreadedSyncAdapter {
         if (Build.VERSION.SDK_INT >= 26) {
             getContext().startForegroundService(service);
         }  else {
-            getContext.startService(service)
+            getContext.startService(service);
         }
     }
 
