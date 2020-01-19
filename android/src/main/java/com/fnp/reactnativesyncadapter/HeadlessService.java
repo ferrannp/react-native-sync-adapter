@@ -6,6 +6,8 @@ import android.content.Intent;
 
 import com.facebook.react.HeadlessJsTaskService;
 import com.facebook.react.jstasks.HeadlessJsTaskConfig;
+import com.facebook.react.bridge.WritableMap;
+import com.facebook.react.bridge.Arguments;
 
 import java.util.List;
 
@@ -16,11 +18,12 @@ public class HeadlessService extends HeadlessJsTaskService {
     @Override
     protected HeadlessJsTaskConfig getTaskConfig(Intent intent) {
         boolean allowForeground = Boolean.valueOf(getString(R.string.rnsb_allow_foreground));
+        WritableMap data = Arguments.createMap();
 
         if(allowForeground || !isAppOnForeground(this)) {
             return new HeadlessJsTaskConfig(
                     TASK_ID,
-                    null,
+                    data,
                     Long.valueOf(getString(R.string.rnsb_default_timeout)),
                     allowForeground);
         }
