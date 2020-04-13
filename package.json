@@ -1,7 +1,7 @@
 {
   "name": "react-native-sync-adapter",
   "title": "React Native Sync Adapter",
-  "version": "2.0.1",
+  "version": "3.0.0",
   "description": "Schedule background data synchronization using React Native and the Android SyncAdapter.",
   "main": "index.js",
   "author": {
