@@ -8,8 +8,11 @@ import com.facebook.react.bridge.ReactMethod;
 
 @SuppressWarnings("unused") class SyncAdapterModule extends ReactContextBaseJavaModule {
 
-    SyncAdapterModule(ReactApplicationContext reactContext) {
+    private final ReactApplicationContext reactContext;
+
+    public SyncAdapterModule(ReactApplicationContext reactContext) {
         super(reactContext);
+        this.reactContext = reactContext;
     }
 
     @ReactMethod

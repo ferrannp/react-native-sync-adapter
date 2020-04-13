@@ -1,6 +1,3 @@
-rootProject.name = 'SyncAdapterExample'
-
+rootProject.name = 'example'
+apply from: file("../node_modules/@react-native-community/cli-platform-android/native_modules.gradle"); applyNativeModulesSettingsGradle(settings)
 include ':app'
-
-include ':react-native-sync-adapter'
-project(':react-native-sync-adapter').projectDir = new File(rootProject.projectDir,   '../node_modules/react-native-sync-adapter/android')

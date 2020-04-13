@@ -7,7 +7,7 @@
 Read a broader introduction in the following post: [React Native and Native Modules: The Android SyncAdapter](https://blog.callstack.io/react-native-and-native-modules-the-android-syncadapter-517ddf851bf4#.qb5ed9din)
 
 ## Requirements
-* React Native 0.36+
+* React Native 0.60+
 
 ## Pros
 Under the hood, this library uses a [SyncAdapter](https://developer.android.com/reference/android/content/AbstractThreadedSyncAdapter.html):
@@ -27,9 +27,10 @@ yarn add react-native-sync-adapter
 ```
 
 ### Installation
-```
-react-native link react-native-sync-adapter
-```
+
+The library will be linked automatically by [Autolinking](https://github.com/react-native-community/cli/blob/master/docs/autolinking.md).
+However, this library requires some manual steps:
+
 #### Manual Android required step
 Open up the `string.xml` file of your Android project. You need to add the following (just change the content):
 ```xml
@@ -48,20 +49,17 @@ AppRegistry.registerComponent('MyApp', () => MyApp);
 AppRegistry.registerHeadlessTask('TASK_SYNC_ADAPTER', () => TestTask);
 ```
 
-Then, on your top most component:
+Then, for example, on your root component:
 ```js
+import {useEffect} from 'react';
 import SyncAdapter from 'react-native-sync-adapter';
 
-...
-
-componentDidMount() {
+useEffect(() => {
   SyncAdapter.init({
     syncInterval,
     syncFlexTime,
   });
-}
-
-...
+}, []);
 ```
 
 That is all! Some extras:
@@ -145,7 +143,7 @@ cd example && yarn && npm start
 Then just run:
 
 ```
-react-native run-android
+yarn android
 ```
 
-**Be careful**: The installed app will trigger a sync around every minute (so it is easy to see that is working). If you debug the app, you should be able to see the HeadlessJS ouputing: `Headless JS task was fired!` (remember not to have the app on the foreground: Unless you override this behavior). After you try it, I recommend to uninstall the app so you don't harm your device battery life.
+**Be careful**: The installed example app will trigger a sync around every minute (so it is easy to see that is working). If you debug the app, you should be able to see the HeadlessJS ouputing: `Headless JS task was fired!` (remember not to have the app on the foreground: Unless you override this behavior). After you try it, I recommend to uninstall the app so you don't harm your device battery life.
