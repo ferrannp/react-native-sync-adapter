@@ -1,10 +1,14 @@
 {
   "name": "react-native-sync-adapter",
+  "title": "React Native Sync Adapter",
   "version": "2.0.1",
   "description": "Schedule background data synchronization using React Native and the Android SyncAdapter.",
   "main": "index.js",
-  "author": "Ferran Negre Pizarro <fnp.developer@gmail.com> (https://github.com/ferrannp)",
-  "license": "MIT",
+  "author": {
+    "name": "Ferran Negre Pizarro",
+    "email": "fnp.developer@gmail.com",
+    "url": "https://github.com/ferrannp"
+  },
   "scripts": {
     "test": "jest",
     "flow": "flow",
@@ -20,32 +24,38 @@
   ],
   "files": [
     "android/src",
-    "android/gradle",
-    "android/gradlew",
-    "android/gradlew.bat",
     "android/build.gradle",
     "index.js"
   ],
   "repository": {
     "type": "git",
-    "url": "https://github.com/ferrannp/react-native-sync-adapter.git"
+    "url": "git+https://github.com/github_account/react-native-sync-adapter.git",
+    "baseUrl": "https://github.com/github_account/react-native-sync-adapter"
+  },
+  "license": "MIT",
+  "licenseFilename": "LICENSE",
+  "readmeFilename": "README.md",
+  "peerDependencies": {
+    "react": "^16.8.1",
+    "react-native": ">=0.60.0-rc.0 <1.0.x"
   },
   "devDependencies": {
-    "babel-jest": "21.2.0",
-    "babel-preset-react-native": "4.0.0",
-    "eslint": "^4.9.0",
-    "eslint-config-callstack-io": "^0.5.0",
-    "flow-bin": "0.53.0",
-    "jest": "21.2.1",
-    "react": "16.0.0-beta.5",
-    "react-native": "0.49.3",
-    "react-test-renderer": "16.0.0-beta.5"
-  },
-  "peerDependencies": {
-    "react-native": ">= 0.36.0"
+    "@babel/core": "^7.6.2",
+    "@babel/runtime": "^7.6.2",
+    "@react-native-community/eslint-config": "^1.0.0",
+    "babel-jest": "^25.3.0",
+    "eslint": "^6.8.0",
+    "eslint-plugin-prettier": "^3.1.3",
+    "flow-bin": "^0.113.0",
+    "jest": "^25.3.0",
+    "metro-react-native-babel-preset": "^0.58.0",
+    "react": "^16.9.0",
+    "react-native": "^0.61.5"
   },
   "jest": {
     "preset": "react-native",
-    "modulePathIgnorePatterns": ["/example/"]
+    "modulePathIgnorePatterns": [
+      "/example/"
+    ]
   }
 }

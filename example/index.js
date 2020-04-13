@@ -1,8 +1,10 @@
 /* @flow */
 
-import React, { Component } from 'react';
-import { AppRegistry, Button, StyleSheet, Text, View } from 'react-native';
+import React, {Component} from 'react';
+import {AppRegistry, Button, StyleSheet, Text, View} from 'react-native';
 import SyncAdapter from 'react-native-sync-adapter';
+
+import {name as appName} from './app.json';
 
 import TestTask from './TestTask';
 
@@ -54,5 +56,14 @@ const styles = StyleSheet.create({
   },
 });
 
-AppRegistry.registerComponent('SyncAdapterExample', () => SyncAdapterExample);
-AppRegistry.registerHeadlessTask('TASK_SYNC_ADAPTER', () => TestTask);
+const TASK_ID = 'TASK_SYNC_ADAPTER';
+
+try {
+  AppRegistry.cancelHeadlessTask(TASK_ID, TASK_ID);
+} catch (e) {}
+AppRegistry.registerComponent(appName, () => SyncAdapterExample);
+AppRegistry.registerCancellableHeadlessTask(
+  TASK_ID,
+  () => TestTask,
+  () => {},
+);

@@ -1,6 +1,6 @@
 [ignore]
 ; We fork some components by platform
-.*/node_modules/.*[.]android.js
+.*/*[.]android.js
 
 ; Ignore "BUCK" generated dirs
 <PROJECT_ROOT>/\.buckd/
@@ -15,21 +15,8 @@ node_modules/warning/.*
 ; Flow doesn't support platforms
 .*/Libraries/Utilities/LoadingView.js
 
-;; Example app
-;.*/example/node_modules/react/.*
-;.*/example/node_modules/react-native/.*
-;.*/example/node_modules/fbjs/.*
-;.*/example/node_modules/haul/.*
-;.*/example/node_modules/metro-bundler/.*
-;.*/example/node_modules/react-native-sync-adapter/.*
-;.*/example/webpack.haul.js
-
-;.*/example/node_modules
-
 [untyped]
-; Oh well
-.*/node_modules/react-native/Libraries/.*
-.*/example/node_modules/react-native/.*
+.*/node_modules/@react-native-community/cli/.*/.*
 
 [include]
 

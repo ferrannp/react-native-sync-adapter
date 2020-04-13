@@ -1,6 +1,6 @@
 /* @flow */
 
-import { NativeModules } from 'react-native';
+import {NativeModules} from 'react-native';
 
 const SyncAdapter = NativeModules.SyncAdapter;
 
@@ -12,18 +12,18 @@ type Init = {
 const _checkIntervals = (syncInterval: number, syncFlexTime: number) => {
   if (syncFlexTime > syncInterval) {
     throw new Error(
-      'Specified syncInterval must be greater than the specified syncFlexTime.'
+      'Specified syncInterval must be greater than the specified syncFlexTime.',
     );
   }
 };
 
 export default {
-  init: ({ syncInterval, syncFlexTime }: Init) => {
+  init: ({syncInterval, syncFlexTime}: Init) => {
     _checkIntervals(syncInterval, syncFlexTime);
     SyncAdapter.init(syncInterval, syncFlexTime);
   },
 
-  syncImmediately: ({ syncInterval, syncFlexTime }: Init) => {
+  syncImmediately: ({syncInterval, syncFlexTime}: Init) => {
     _checkIntervals(syncInterval, syncFlexTime);
     SyncAdapter.syncImmediately(syncInterval, syncFlexTime);
   },
